@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1780986",
+      "name": "用户",
+      "font_class": "yonghu",
+      "unicode": "e755",
+      "unicode_decimal": 59221
+    },
+    {
+      "icon_id": "3295907",
+      "name": "魅族",
+      "font_class": "meizu",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "7277833",
+      "name": "购物车空",
+      "font_class": "gouwuchekong",
+      "unicode": "e504",
+      "unicode_decimal": 58628
+    },
+    {
+      "icon_id": "12510300",
+      "name": "魅族",
+      "font_class": "meizu1",
+      "unicode": "e501",
+      "unicode_decimal": 58625
+    },
+    {
+      "icon_id": "14330989",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "14484057",
+      "name": "三角箭头 上",
+      "font_class": "sanjiaojiantoushang",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "14484058",
+      "name": "三角箭头 下",
+      "font_class": "sanjiaojiantouxia",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+#header-content,
+#content,
+#footer-content {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  background-color: #fff;
+}
+
+#header-content {
+  height: 68px;
+}
+#header-content h1 {
+  width: 125px;
+  height: 53px;
+  font-size: 30px;
+  line-height: 80px;
+  text-align: center;
+}
+#header-content h1 a {
+  width: 125px;
+  height: 24px;
+}
+
+.icon-meizu {
+  font-size: 24px;
+  color: skyblue;
+  line-height: 24px;
+}
+
+#content-box {
+  position: relative;
+  width: 100%;
+}
+
+#content {
+  height: 750px;
+}
+
+#bg-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: pink url("../images/pic-flyme.png") no-repeat;
+  background-position: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#reg-box {
+  position: absolute;
+  background-color: #fff;
+  top: 100px;
+  right: 200px;
+  border-radius: 3px;
+  box-shadow: 0 6px 12px 0 rgba(170, 75, 165, 0.15);
+  padding: 72px 35px 20px;
+}
+
+input {
+  width: 288px;
+  height: 40px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+.clear_lp {
+  padding-left: 0 !important;
+}
+
+#tab-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#tab-text a {
+  font-size: 18px;
+  color: #387aff;
+}
+#tab-text a:hover {
+  color: skyblue;
+}
+
+#usernamebox {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #999;
+}
+
+#passwordbox {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #999;
+}
+
+#passwordboxr {
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #999;
+}
+
+#loginBtn {
+  display: inline-block;
+  color: #32a5e7;
+  font-size: 16px;
+}
+#loginBtn:hover {
+  color: burlywood;
+}
+
+#rembpsd {
+  height: 20px;
+  margin-bottom: 15px;
+}
+#rembpsd span {
+  float: left;
+  display: block;
+  height: 20px;
+  font-size: 14px;
+  color: #7f7f7f;
+}
+
+#forget {
+  margin-left: 190px;
+  display: inline-block;
+  color: #32a5e7;
+  font-size: 16px;
+}
+#forget:hover {
+  color: burlywood;
+}
+
+#rembPsd {
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#btn-box {
+  width: 302px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #387aff;
+  color: #fff;
+  border: none;
+  margin-bottom: 10px;
+}
+
+#service-lable {
+  display: inline-block;
+  font-size: 14px;
+  color: #000;
+  margin-right: 10px;
+  line-height: 40px;
+}
+
+#service-num {
+  display: inline;
+  font-size: 14px;
+  color: #000;
+  margin-right: 20px;
+  line-height: 40px;
+}
+
+#footer {
+  width: 100%;
+  background-color: #fff;
+}
+
+#footer-content {
+  height: 131px;
+}
+
+#footer-top {
+  width: 1000px;
+  padding: 10px;
+}
+#footer-top ul {
+  float: left;
+  padding: 10px 0;
+}
+#footer-top ul li {
+  float: left;
+}
+#footer-top ul li a {
+  font-size: 14px;
+  color: #000;
+  padding: 0 15px;
+  border-right: 1px solid #999;
+}
+#footer-top div {
+  margin-left: 36px;
+  float: left;
+}
+#footer-top div a {
+  font-size: 14px;
+  color: #fff;
+  background-color: #32a5e7;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+#footer-bottom {
+  padding: 20px 0;
+  font-size: 12px;
+  color: #7f7f7f;
+}
+#footer-bottom a {
+  font-size: 12px;
+  color: #7f7f7f;
+  padding: 0 5px;
+}
+#footer-bottom a:hover {
+  color: #000;
+}
+
+/*# sourceMappingURL=register.css.map */

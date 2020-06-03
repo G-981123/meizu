@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script src="./jquery.lazyload.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            width: 100%;
+            height: 82px;
+            background-color: pink;
+        }
+
+        #banner {
+            width: 100%;
+            height: 640px;
+            background-color: plum;
+        }
+
+        #lazybox {
+            width: 1240px;
+            margin: 0 auto;
+            height: 1000px;
+        }
+
+        #box-show>div {
+            float: left;
+            width: 300px;
+            height: 300px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="banner"></div>
+    <div id="lazybox">
+        <div id="box-show">
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/08/d26392c2-62c8-4f12-8650-cebfb34734d4.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="../images/8.jpg"></div>
+            <div><img class="lazy" data-original="../images/1.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/08/d26392c2-62c8-4f12-8650-cebfb34734d4.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="../images/8.jpg"></div>
+            <div><img class="lazy" data-original="../images/1.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/08/d26392c2-62c8-4f12-8650-cebfb34734d4.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="https://fms.res.meizu.com/dms/2020/05/27/fe4b287c-52d4-4a57-a65f-3ec90364599d.jpg"></div>
+            <div><img class="lazy" data-original="../images/8.jpg"></div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () { //和拼接的元素放在一起。
+        $("img.lazy").lazyload({
+            effect: "fadeIn" //图片显示方式
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+@mixin banxin {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+// h2
+@mixin h2title {
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+@mixin main-img-box {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: #fff;
+}
+
+@mixin box-img {
+    position: absolute;
+    width: 2560px;
+    height: 450px;
+    left: 50%;
+    margin: 0 -1280px;
+}
+
+@mixin img {
+    width: 100%;
+    height: 100%;
+
+    // position: absolute;
+    // width: auto;
+    // height: auto;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    // cursor: pointer;
+}
+
+#main {
+    width: 100%;
+    background-color: #eee;
+    min-height: 1400px;
+    padding-top: 50px;
+}
+
+#phone-box {
+    width: 100%;
+}
+
+h2 {
+    @include h2title()
+}
+
+.img-box {
+    @include box-img()
+}
+
+#phone-img-box {
+    @include main-img-box();
+
+    img {
+        @include img()
+    }
+}

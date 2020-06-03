@@ -1,0 +1,253 @@
+#header-box {
+  width: 1240px;
+  margin: 0 auto;
+  height: 82px;
+  position: relative;
+  z-index: 998;
+}
+
+#header {
+  width: 100%;
+  height: 82px;
+  background-color: none;
+}
+
+#header-show {
+  z-index: 997;
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 265px;
+  padding-top: 82px;
+  background-color: #fff;
+}
+
+#show-content {
+  width: 1240px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 998;
+  width: 1240px;
+  margin-left: 50%;
+  top: 82px;
+  transform: translateX(-50%);
+  display: none;
+  height: 183px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 50px;
+}
+
+.showdowncolor {
+  color: #333 !important;
+}
+
+.item {
+  position: absolute;
+  width: 1240px;
+  height: 183px;
+}
+
+.item-box {
+  box-sizing: border-box;
+  width: 1240px;
+  height: 183px;
+  padding: 15px 0 20px;
+}
+.item-box li {
+  float: left;
+  padding: 0 15px;
+  height: 155px;
+}
+.item-box li span {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.item-box li span img {
+  width: 100%;
+  height: 100%;
+}
+.item-box li p {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  line-height: 22px;
+}
+.item-box li em {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+  line-height: 26px;
+}
+
+#loge {
+  box-sizing: border-box;
+  width: 125px;
+  height: 82px;
+  padding: 28px 0;
+  margin-right: 30px;
+}
+
+.icon-meizu {
+  width: 125px;
+  height: 24px;
+  color: #fff;
+  font-size: 22px;
+  line-height: 24px;
+}
+
+.icon-meizu-color {
+  color: #008cff !important;
+}
+
+.icon-yonghu-color {
+  color: #333 !important;
+}
+
+.icon-gouwuchekong-color {
+  color: #333 !important;
+}
+
+#nav li {
+  box-sizing: border-box;
+  float: left;
+  height: 82px;
+  padding-top: 31px;
+}
+#nav li a {
+  font-size: 14px;
+  color: #fff;
+  padding: 31px 20px 30px;
+}
+#nav li a:hover {
+  color: #008cff;
+}
+
+#search-box {
+  box-sizing: border-box;
+  width: 170px;
+  height: 60px;
+  padding: 30px 0 0 0;
+  margin-left: 10px;
+}
+
+#search-content {
+  box-sizing: border-box;
+  width: 180px;
+  height: 30px;
+  border: 1px solid #999;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 0 0 10px 12px;
+}
+
+#search-txt {
+  display: block;
+  float: left;
+  border: none;
+  padding: 0;
+  outline: 0;
+  width: 127px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+  transition: width .5s;
+  font-size: 12px;
+  line-height: 20px;
+  color: #333;
+  background: transparent;
+  box-sizing: content-box;
+  outline-offset: 0;
+}
+
+.icon-sousuo {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#header-right {
+  height: 36px;
+  padding: 21px;
+}
+
+#header-user {
+  width: 36px;
+  height: 36px;
+  margin-right: 15px;
+}
+#header-user .icon-yonghu {
+  font-size: 26px;
+  line-height: 36px;
+  color: #fff;
+}
+
+#header-cart {
+  width: 36px;
+  height: 36px;
+}
+#header-cart .icon-gouwuchekong {
+  font-size: 26px;
+  line-height: 36px;
+  color: #fff;
+}
+
+#banner {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 680px;
+  background-color: none;
+}
+
+#banner-show {
+  position: relative;
+  overflow: hidden;
+  width: 2560px;
+  height: 680px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+#bannerbox {
+  position: absolute;
+  height: 680px;
+}
+#bannerbox li {
+  float: left;
+  width: 2560px;
+  height: 680px;
+}
+#bannerbox li img {
+  width: 2560px;
+  height: 100%;
+}
+
+#bannerbtns {
+  position: absolute;
+  bottom: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 20px;
+}
+#bannerbtns li {
+  display: block;
+  float: left;
+  margin: 0 10px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #999;
+  border-radius: 50%;
+}
+#bannerbtns .active {
+  background-color: purple !important;
+}
+
+/*# sourceMappingURL=header.css.map */

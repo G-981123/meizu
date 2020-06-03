@@ -1,0 +1,135 @@
+@mixin box ($h, $c) {
+    width: 100%;
+    height: $h;
+    background-color: $c;
+}
+
+@mixin banxin {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+#footer {
+    width: 100%;
+    padding: 48px 0 20px;
+    background-color: #fff;
+}
+
+#footer-top {
+    @include banxin();
+    margin-bottom: 20px;
+
+    div {
+        float: right;
+        width: 170px;
+        height: 102px;
+
+        // background-color: yellow;
+        span {
+            display: block;
+            font-size: 12px;
+            color: #999;
+            text-align: right;
+        }
+
+        p {
+            font-size: 24px;
+            color: #00c3f5;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        a {
+            display: block;
+            width: 88px;
+            height: 33px;
+            background-color: #0bbbef;
+            color: #fff;
+            margin: 3px 0 0;
+            padding: 0 16px;
+            border-radius: 16px;
+            text-align: center;
+            line-height: 33px;
+            margin-left: 50px;
+        }
+    }
+}
+
+#footer-top-content {
+    width: 1000px;
+    float: left;
+
+    li {
+        float: left;
+
+        a {
+            width: 150px;
+
+            img {
+                width: 50px;
+                height: 39px;
+                margin: 0 50px;
+            }
+
+            span {
+                display: block;
+                height: 14px;
+                font-size: 12px;
+                text-align: center;
+                line-height: 14px;
+                color: #999;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+hr {
+    @include banxin();
+}
+
+#footer-bottom {
+    @include banxin();
+    // background-color: yellow;
+    padding: 20px 0 0;
+
+    ul {
+        width: 900px;
+
+        li {
+            float: left;
+            border-right: 1px solid #999;
+
+            a {
+                font-size: 12px;
+                padding: 5px 15px;
+                line-height: 12px;
+                color: #999;
+
+                &:hover {
+                    color: #00c3f5;
+                }
+            }
+        }
+    }
+
+    div {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #999;
+
+        a {
+            font-size: 12px;
+            color: #999;
+            margin-left: 5px;
+
+            &:hover {
+                color: #00c3f5;
+            }
+        }
+    }
+}
+
+.clear_lp {
+    padding-left: 0 !important;
+}
