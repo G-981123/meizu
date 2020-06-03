@@ -1,0 +1,112 @@
+@charset "utf-8";
+#back-img {
+    width: 100%;
+    margin: 0 auto;
+    height: 450px;
+    cursor: pointer;
+    background-image: url("../images/5.jpg");
+    background-color: #f2f2f2;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#main {
+    width: 100%;
+    background-color: #eee;
+}
+#show-phone-content {
+    width: 1240px;
+    margin: 0 auto;
+    min-height: 600px;
+    background-color: #eee;
+}
+#box-top {
+    width: 1240px;
+    background-color: #eee;
+}
+#h2title {
+    display: block;
+    float: left;
+    margin: 87px 0 0;
+    font-size: 30px;
+    color: #333;
+}
+#btn-box {
+    float: right;
+    padding: 87px 0 0;
+    a { 
+        float: left;
+        display: block;
+        font-size: 18px;
+        width: 100px;
+        height: 20px;
+        color: #333;
+    }
+}
+.active {
+    color: #008cff !important;
+}
+#phone-content {
+    width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: #eee;
+}
+.phone-goods {
+    margin: 10px 0 10px 0;
+    width: 403px;
+    height: 555px;
+    background-color: #fff;
+        &:hover {
+            box-shadow: 5px 5px 10px gray;
+        }
+}
+.goods-img-box{
+    width: 302px;
+    height: 302px;
+    margin: 0 auto;
+    padding: 30px 0 20px 0;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.goods-name {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    line-height: 36px;
+    font-weight: 800;
+}
+.goods-desc {
+    font-size:16px;
+    color: #999;
+    text-align: center;
+    line-height: 26px;
+    margin: 0 0 10px 0;
+}
+.goods-price {
+    display: block;
+    margin: 0 auto;
+    font-size: 28px;
+    text-align: center;
+    color: #cc0000;
+    font-weight: 700;
+    i {
+        font-size: 16px;
+        color: #cc0000;
+    }
+}
+#page {
+    width: 1240px;
+    margin: auto;
+    min-height: 80px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
