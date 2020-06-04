@@ -121,9 +121,9 @@ gulp.task('uglifyimg', () => {
 // });
 
 
-// gulp.task('default', () => {
-//     watch(['src/*.html', 'src/scss/*.scss', 'src/js/*.js'], gulp.parallel('uglifyhtml', 'compilesass', 'uglifyjs'));
-// });
 gulp.task('default', () => {
-    watch(['src/*.html', 'src/scss/*.scss'], gulp.parallel('uglifyhtml', 'compilesass'));
+    watch(['src/*.html', 'src/scss/*.scss', 'src/js/*.js'], gulp.parallel('uglifyhtml', 'compilesass', 'uglifyjs'));
 });
+// gulp.task('default', () => {
+//     watch(['src/*.html', 'src/scss/*.scss'], gulp.parallel('uglifyhtml', 'compilesass'));
+// });

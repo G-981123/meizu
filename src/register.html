@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="欢迎登录和注册 Flyme 账号，您可以体验手机云服务功能，包括：在线下载应用，同步手机数据和查找手机等，让您的手机管理更加智能。" />
-	<meta name="keywords" content="魅族  meizu 登录flyme 云服务  查找手机  充值账号  MX M9 MX2" />
+    <meta name="keywords" content="魅族  meizu 登录flyme 云服务  查找手机  充值账号  MX M9 MX2" />
     <title>Flyme 账号 - 注册</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/register.css">
@@ -30,9 +30,12 @@
                     <div id="tab-text">
                         <a href="javascipt:;">账号注册</a>
                     </div>
-                    <div id="usernamebox"><input type="text" id="username" placeholder="以字母开头,数组字母下划线组成的6-16位名称"></div>
-                    <div id="passwordbox"><input type="password" id="password" placeholder="密码最少6位最多不能超过16位"></div>
-                    <div id="passwordboxr"><input type="password" id="passwordr" placeholder="确认密码"></div>
+                    <div id="usernamebox"><input type="text" id="username"
+                            placeholder="用户名以字母开头,数字,字母,下划线组成,6-16位"><span class="right-msg"></span></div>
+                    <div id="passwordbox"><input type="password" id="password"
+                            placeholder="密码以数字,字母,下划线组成,最少6位最多16位"><span class="right-msg"></span></div>
+                    <div id="passwordboxr"><input type="password" id="passwordr" placeholder="确认密码"><span
+                            class="right-msg"></span></div>
                     <div id="btn-box"><input type="button" id="btn-box" value="注册"></div>
                     <a href="login.html" id="loginBtn">登入</a>
                 </form>
@@ -64,7 +67,122 @@
             </div>
         </div>
     </div>
-    <script src="./js/login.js"></script>
+    <script src="./js/register.js"></script>
+    <!-- <script>
+        class Validation {
+            constructor(obj) {
+                this.dom = obj.dom,
+                    this.matching = obj.matching,
+                    this.yznum = 0
+            }
+            contrast() {
+                let reg = this.matching
+                let _this = this
+                // return new Promise( async(resolve,rejcct)=>{
+                // await
+                this.dom.focusout(() => {
+                    let regvalue = _this.dom.val()
+                    // console.log(_this.dom.val())
+                    // console.log(reg)
+                    if (reg.test(regvalue)) {
+                        _this.dom.next().html("√").attr("data-num", 1)
+                        // console.log(1)
+                        // resolve(_this.yznum=1)
+                    } else {
+                        _this.dom.next().html("×").attr("data-num", 0)
+                        // console.log(2)
+                        // resolve(_this.yznum=0)
+                    }
+                })
+                // })
+            }
+        }
+        let $username = $("#username")
+        let $password = $("#password")
+        let $passwordr = $("#passwordr")
+        let $btn = $("#btn-box")
+        // username.focusout(function(){
+        //     console.log(1)
+        // })
+        let isuser = new Validation({
+            dom: $username,
+            matching: /^[a-zA-Z]\w{5,15}$/
+        })
+        isuser.contrast()
+
+        let ispass = new Validation({
+            dom: $password,
+            matching: /^\w{6,16}$/
+        })
+        ispass.contrast()
+        // let ispassr=new Validation({
+        //     dom:$passwordr,
+        //     matching:/^\w{6,16}$/
+        // })
+        // ispassr.contrast()
+
+        //判断两个密码一样
+        $username.focusout(function () {
+            $.get(
+                "http://10.31.162.86/dest/php/registeruser.php", {
+                    "username": $username.val()
+                },
+                function (data) {
+                    if (data == 1) {
+                        $username.next().html("×").attr("data-num", 0)
+                        // console.log(1)
+                    } else if (data == 0) {
+                        $username.next().html("√").attr("data-num", 1)
+                        // console.log(2)
+                    }
+                }
+            )
+        })
+        $passwordr.focusout(function () {
+            if ($(this).val() != '' && $(this).val() == $password.val()) {
+                $(this).next().html("√").attr("data-num", 1)
+            } else {
+                $(this).next().html("×").attr("data-num", 0)
+            }
+        })
+        $password.focusout(function () {
+            if ($passwordr.val() != '') {
+                if ($passwordr.val() != '' && $passwordr.val() == $password.val()) {
+                    $passwordr.next().html("√").attr("data-num", 1)
+                } else {
+                    $passwordr.next().html("×").attr("data-num", 0)
+                }
+            } else {
+                return
+            }
+        })
+        $btn.on("click", function () {
+            let yzarr = [0, 0, 0]
+            $(".right-msg").each(function (index, item) {
+                //  yzarr[index] = item.attr("data-num");
+                //  console.log(yzarr[index])
+                // console.log(index)
+                yzarr[index] = $(this).attr('data-num')
+            })
+            //  console.log(parseInt(yzarr[0])+parseInt(yzarr[1])+parseInt(yzarr[2]))
+            if (parseInt(yzarr[0]) + parseInt(yzarr[1]) + parseInt(yzarr[2]) == 3) {
+                $.post("http://10.31.162.86/dest/php/register.php", {
+                        "username": $username.val(),
+                        "userpass": $password.val()
+                    },
+                    function (data) {
+                        if (data == 1) {
+                            alert("注册成功")
+                        } else if (data == 0) {
+                            alert("注册失败")
+                        }
+
+                    })
+            } else {
+                return false
+            }
+        })
+    </script> -->
 </body>
 
 </html>

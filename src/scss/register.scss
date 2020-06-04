@@ -95,20 +95,28 @@ input {
 }
 
 #usernamebox {
+    position: relative;
     margin-bottom: 20px;
     border-radius: 6px;
     border: 1px solid #999;
 }
 
 #passwordbox {
+    position: relative;
     margin-bottom: 20px;
     border-radius: 6px;
     border: 1px solid #999;
 }
 #passwordboxr {
+    position: relative;
     margin-bottom: 20px;
     border-radius: 6px;
     border: 1px solid #999;
+}
+.right-msg {
+    position: absolute;
+    right: -20px;
+    top: 5px;
 }
 #loginBtn {
     display: inline-block;
