@@ -56,7 +56,10 @@ em,
 i {
     font-style: normal;
 }
-
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
 a,
 u {
     text-decoration: none;

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="购物车，我的购物车">
+    <meta name="Keywords"
+        content=“魅族手机官网商城,魅族官方在线商店,魅族在线商城,魅族官网在线商店,魅族手机,魅蓝手机官网商城,魅蓝官方在线商店,魅蓝在线商城,魅蓝官网在线商店,魅蓝手机,魅族商城,魅蓝商城,魅族商城App,魅蓝商城App”>
+    <title>购物车-我的购物车</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <script src="./js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-show">
+            <h1 class="float_l"> <a href="index.html">
+                    <span class="iconfont icon-meizu"></span>
+                </a>
+            </h1>
+            <ul id="layout-left" class="clear_fix">
+                <li>购物车</li>
+                <li>></li>
+                <li>确认订单</li>
+                <li>></li>
+                <li>在线支付</li>
+                <li>></li>
+                <li>完成</li>
+            </ul>
+            <ul id="layout-right" class="clear_fix">
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#"><em id="header-user"></em><span>的商城</span><i>∨</i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="cart">
+        <div id="cart-box">
+            <div id="no-goods" class="clear_fix">
+                <div id="left-no-cart">
+                </div>
+                <div id="right-no-cart">
+                    <div id="right-no-title">购物车内还没有商品，赶紧去选购吧~</div>
+                    <div id="right-no-btn"><a href="./index.html">返回商城首页</a></div>
+                </div>
+            </div>
+            <div id="is-goods">
+                <div id="is-goods-content">
+                    <table id="is-goods-header">
+                        <tr>
+                            <td class="cart-col-select"><input type="checkbox"
+                                    class="checkboxs query-all"><span>全选</span></td>
+                            <td class="cart-col-price">单价(元)</td>
+                            <td class="cart-col-num">数量</td>
+                            <td class="cart-col-total">小计(元)</td>
+                            <td class="cart-col-ctrl">编辑</td>
+                        </tr>
+                    </table>
+                    <div id="is-goods-main">
+                        <table id="is-goods-body">
+                            <tr class="goods-body-list">
+                                <td class="cart-col-select">
+                                    <div class="goods-body-checkbox"><input type="checkbox" class="checkboxs query-one">
+                                    </div>
+                                    <div class="goods-body-img"><img src="./images/8.jpg" alt=""></div>
+                                    <div class="goods-body-desc">
+                                        <a href="#" class="goods-body-link">
+                                            <p class="link-top">魅族 16th Plus</p>
+                                            <p class="link-bottom">全网通公开版 远山白 8+128GB</p>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="cart-col-price">
+                                    <p class="cart-product-price">￥<span>4999</span></p>
+                                </td>
+                                <td class="cart-col-num">
+                                    <div class="col-num-box">
+                                        <input type="button" class="num-pre" value="-">
+                                        <input type="text" class="num-text" value="1">
+                                        <input type="button" class="num-add" value="+">
+                                    </div>
+                                </td>
+                                <td class="cart-col-total">
+                                    <p class="cart-product-total">￥<span>4999</span></p>
+                                </td>
+                                <td class="cart-col-ctrl">
+                                    <p class="cart-product-ctrl"><span>--</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="is-goods-footer" class="clear_fix">
+                        <div id="goods-footer-left" class="float_l clear_fix">
+                            <div class="clear_fix">
+                                <input type="checkbox" class="query-all"><span>全选</span>
+                            </div>
+                            <span id="del">删除选中的商品</span>
+                            <span id="select">共<span>&nbsp;1&nbsp;</span>件商品,已选择&nbsp;<span>1</span>&nbsp;件</span>
+                        </div>
+                        <div id="goods-footer-right" class="float_r">
+                            <span>已优惠<em>0.00</em>元,合计(不含运费):<i>￥0.00</i></span>
+                            <div>去结算</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-meizu" style="width: 100%;"></div>
+</body>
+<script>
+    $("#footer-meizu").load("./footer.html")
+</script>
+
+</html>
