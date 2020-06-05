@@ -116,14 +116,18 @@ gulp.task('uglifyimg', () => {
 // 参2:通过gulp.parallel()并行监听任务名。
 // 监听的任务必须先执行一次，再能进行监听。
 
+//html js scss img
 // gulp.task('default', () => {
 //     watch(['src/thirdplugins/*.js', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js', 'src/img/*.{jpg,png,gif}'], gulp.parallel('copyfile', 'uglifyhtml', 'compilesass', 'uglifyjs', 'uglifyimg'));
 // });
 
 
+//html js scss
 gulp.task('default', () => {
-    watch(['src/*.html', 'src/scss/*.scss', 'src/js/*.js'], gulp.parallel('uglifyhtml', 'compilesass', 'uglifyjs'));
+    watch(['src/thirdplugins/*.js', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js'], gulp.parallel( 'uglifyhtml', 'compilesass', 'uglifyjs'));
 });
+
+// html cscc
 // gulp.task('default', () => {
 //     watch(['src/*.html', 'src/scss/*.scss'], gulp.parallel('uglifyhtml', 'compilesass'));
 // });

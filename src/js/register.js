@@ -1,8 +1,8 @@
 class Validation {
     constructor(obj) {
         this.dom = obj.dom,
-            this.matching = obj.matching,
-            this.yznum = 0
+            this.matching = obj.matching
+        // this.yznum = 0
     }
     contrast() {
         let reg = this.matching
@@ -30,6 +30,7 @@ let $username = $("#username")
 let $password = $("#password")
 let $passwordr = $("#passwordr")
 let $btn = $("#btn-box")
+let user =false // 解决用户名后端验证延时问题提前注册问题
 // username.focusout(function(){
 //     console.log(1)
 // })
@@ -51,21 +52,30 @@ ispass.contrast()
 // ispassr.contrast()
 
 //判断两个密码一样
-$username.focusout(function () {
-    $.get(
-        "http://10.31.162.86/dest/php/registeruser.php", {
-            "username": $username.val()
-        },
-        function (data) {
-            if (data == 1) {
-                $username.next().html("×").attr("data-num", 0)
-                // console.log(1)
-            } else if (data == 0) {
-                $username.next().html("√").attr("data-num", 1)
-                // console.log(2)
+function isUser() {
+    if ($username.val() != '') {
+        $.get(
+            "http://10.31.162.86/dest/php/registeruser.php", {
+                "username": $username.val()
+            },
+            function (data) {
+                if (data == 1) {
+                    $username.next().html("×").attr("data-num", 0)
+                    // console.log(1)
+                } else if (data == 0) {
+                    $username.next().html("√").attr("data-num", 1)
+                    // console.log(2)
+                    user =true
+                }
             }
-        }
-    )
+        )
+    } else {
+        return false
+    }
+}
+$username.focusout(function () {
+    user=false
+    isUser()
 })
 $passwordr.focusout(function () {
     if ($(this).val() != '' && $(this).val() == $password.val()) {
@@ -85,7 +95,7 @@ $password.focusout(function () {
         return
     }
 })
-$btn.on("click", function () {
+$btn.on("click",function () {
     let yzarr = [0, 0, 0]
     $(".right-msg").each(function (index, item) {
         //  yzarr[index] = item.attr("data-num");
@@ -94,7 +104,7 @@ $btn.on("click", function () {
         yzarr[index] = $(this).attr('data-num')
     })
     //  console.log(parseInt(yzarr[0])+parseInt(yzarr[1])+parseInt(yzarr[2]))
-    if (parseInt(yzarr[0]) + parseInt(yzarr[1]) + parseInt(yzarr[2]) == 3) {
+    if (parseInt(yzarr[0]) + parseInt(yzarr[1]) + parseInt(yzarr[2]) == 3&&user==true) {
         $.post("http://10.31.162.86/dest/php/register.php", {
                 "username": $username.val(),
                 "userpass": $password.val()
@@ -102,6 +112,7 @@ $btn.on("click", function () {
             function (data) {
                 if (data == 1) {
                     alert("注册成功")
+                    location.href='./login.html'
                 } else if (data == 0) {
                     alert("注册失败")
                 }
