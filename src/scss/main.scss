@@ -140,10 +140,18 @@
     line-height: 28px;
 }
 .goods-desc-top {
+    margin: 0 auto;
     font-size:18px;
     color: #333;
+    height: 28px;
     text-align: center;
     line-height: 28px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 460px;
 }
 .goods-price-top {
     display: block;
@@ -187,8 +195,16 @@
 .goods-desc {
     font-size:14px;
     color: #999;
+    height: 20px;
+    margin: 0 auto;
     text-align: center;
     line-height: 20px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    width: 230px;
 }
 .goods-price {
     display: block;

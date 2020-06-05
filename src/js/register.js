@@ -1,8 +1,10 @@
 class Validation {
     constructor(obj) {
         this.dom = obj.dom,
-            this.matching = obj.matching
+            this.matching = obj.matching,
         // this.yznum = 0
+        this.msgdom =obj.msgdom,
+        this.str=obj.str
     }
     contrast() {
         let reg = this.matching
@@ -14,13 +16,14 @@ class Validation {
             // console.log(_this.dom.val())
             // console.log(reg)
             if (reg.test(regvalue)) {
-                _this.dom.next().html("√").attr("data-num", 1)
+                _this.dom.next().html("√").css({color:'green'}).attr("data-num", 1)
                 // console.log(1)
                 // resolve(_this.yznum=1)
             } else {
-                _this.dom.next().html("×").attr("data-num", 0)
+                _this.dom.next().html("×").css({color:'red'}).attr("data-num", 0)
                 // console.log(2)
                 // resolve(_this.yznum=0)
+                _this.msgdom.html(_this.str).stop(true).fadeIn(600).delay(1200).fadeOut(600)
             }
         })
         // })
@@ -30,19 +33,24 @@ let $username = $("#username")
 let $password = $("#password")
 let $passwordr = $("#passwordr")
 let $btn = $("#btn-box")
+let $msgbox=$("#msgbox")
 let user =false // 解决用户名后端验证延时问题提前注册问题
 // username.focusout(function(){
 //     console.log(1)
 // })
 let isuser = new Validation({
     dom: $username,
-    matching: /^[a-zA-Z]\w{5,15}$/
+    matching: /^[a-zA-Z]\w{5,15}$/,
+    msgdom:$msgbox,
+    str:'用户名格式错误'
 })
 isuser.contrast()
 
 let ispass = new Validation({
     dom: $password,
-    matching: /^\w{6,16}$/
+    matching: /^\w{6,16}$/,
+    msgdom:$msgbox,
+    str:'密码格式错误'
 })
 ispass.contrast()
 // let ispassr=new Validation({
@@ -60,10 +68,11 @@ function isUser() {
             },
             function (data) {
                 if (data == 1) {
-                    $username.next().html("×").attr("data-num", 0)
+                    $username.next().html("×").css({color:'red'}).attr("data-num", 0)
+                    $msgbox.html("用户名已存在").stop(true).fadeIn(600).delay(1200).fadeOut(600)
                     // console.log(1)
                 } else if (data == 0) {
-                    $username.next().html("√").attr("data-num", 1)
+                    $username.next().html("√").css({color:'green'}).attr("data-num", 1)
                     // console.log(2)
                     user =true
                 }
@@ -75,21 +84,25 @@ function isUser() {
 }
 $username.focusout(function () {
     user=false
-    isUser()
+    if($(this).next().html()=="√"){
+        isUser()
+    }
 })
 $passwordr.focusout(function () {
     if ($(this).val() != '' && $(this).val() == $password.val()) {
-        $(this).next().html("√").attr("data-num", 1)
+        $(this).next().html("√").css({color:'green'}).attr("data-num", 1)
     } else {
-        $(this).next().html("×").attr("data-num", 0)
+        $(this).next().html("×").css({color:'red'}).attr("data-num", 0)
+        $msgbox.html("两次密码不一致").stop(true).fadeIn(600).delay(1200).fadeOut(600)
     }
 })
 $password.focusout(function () {
     if ($passwordr.val() != '') {
         if ($passwordr.val() != '' && $passwordr.val() == $password.val()) {
-            $passwordr.next().html("√").attr("data-num", 1)
+            $passwordr.next().html("√").css({color:'green'}).attr("data-num", 1)
         } else {
-            $passwordr.next().html("×").attr("data-num", 0)
+            $passwordr.next().html("×").css({color:'red'}).attr("data-num", 0)
+            $msgbox.html("密码格式错误").stop(true).fadeIn(600).delay(1200).fadeOut(600)
         }
     } else {
         return
@@ -120,6 +133,9 @@ $btn.on("click",function () {
 
             })
     } else {
-        return false
+        $msgbox.html("输入错误,请重新输入").stop(true).fadeIn(600).delay(1200).fadeOut(600)
+    }
+    if($passwordr.val() == ''||$password.val() == ''||$username.val() == ''){
+        $msgbox.html("用户名或密码不能为空").stop(true).fadeIn(600).delay(1200).fadeOut(600)
     }
 })

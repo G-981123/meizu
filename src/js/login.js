@@ -3,6 +3,7 @@ $(function () {
     const $password = $("#password")
     const $loginbtn = $("#btn-box")
     const $checkbox = $("#rembPsd")
+    const $msgbox=$("#msgbox")
     if (getCookie("username")) {
         $username.val(getCookie("username"))
     }
@@ -27,7 +28,8 @@ $(function () {
             })
     }
     $loginbtn.on("click", function () {
-        $.post("http://10.31.162.86/dest/php/login.php", {
+        if($username.val()!=''&&$password.val()!=''){
+            $.post("http://10.31.162.86/dest/php/login.php", {
                 "username": $username.val(),
                 "userpass": $password.val()
             },
@@ -48,5 +50,9 @@ $(function () {
                 }
 
             })
+        }
+        else if($username.val()==''||$password.val()=='') {
+            $msgbox.html("用户名或密码不能为空").stop(true).fadeIn(600).delay(1200).fadeOut(600)
+        }
     })
 })
