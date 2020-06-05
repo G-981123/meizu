@@ -112,6 +112,7 @@ $btn.on("click",function () {
             function (data) {
                 if (data == 1) {
                     alert("注册成功")
+                    addCookie("username",$username.val(),1)
                     location.href='./login.html'
                 } else if (data == 0) {
                     alert("注册失败")
