@@ -9,6 +9,7 @@
     <meta name="description" content="魅族官网是魅族官方提供的电子商务平台,包括魅族手机/魅蓝手机/数码配件/生活周边等产品,提供在线购物、产品资讯、售前售后服务、在线社区交流等服务." />
     <title>魅族官网 - 魅族 17 系列手机：如你，才华横溢</title>
     <script src="./js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="icon/iconfont.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/jquery.lazyload.js"></script>
@@ -40,7 +41,10 @@
             <li>手机</li>
             <li>声学</li>
             <li>配件</li>
-            <li>顶部</li>
+            <li>社区</li>
+            <li>Flyme</li>
+            <li>视频</li>
+            <li id="last">顶部</li>
         </ul>
     </div>
     <!-- main -->
@@ -83,44 +87,56 @@
                 <div class="flyme-list-first">
                     <a href="javascript:;">
                         <div>
-                            <img src="https://fms.res.meizu.com/dms/2020/05/27/2432d698-30a2-44ab-9ad7-e2a8d7fed254.png" alt="">
+                            <img src="https://fms.res.meizu.com/dms/2020/05/27/2432d698-30a2-44ab-9ad7-e2a8d7fed254.png"
+                                alt="">
                         </div>
                     </a>
                 </div>
                 <div class="flyme-list">
                     <a href="javascript:;">
-                        <div class="flyme-list-img"><img src="https://fms.res.meizu.com/dms/2019/10/25/548670c7-a4c2-4510-b4d5-daf36799905c.png" alt=""></div>
-                    <span class="flyme-list-desc">魅族成为三大运营商 5G 战略合作伙伴</span>
+                        <div class="flyme-list-img"><img
+                                src="https://fms.res.meizu.com/dms/2019/10/25/548670c7-a4c2-4510-b4d5-daf36799905c.png"
+                                alt=""></div>
+                        <span class="flyme-list-desc">魅族成为三大运营商 5G 战略合作伙伴</span>
                     </a>
                 </div>
                 <div class="flyme-list">
                     <a href="javascript:;">
-                        <div class="flyme-list-img"><img src="https://fms.res.meizu.com/dms/2019/10/25/9f881cfe-a9e7-465c-a88d-5fca2ba02d8d.jpg" alt=""></div>
-                    <span class="flyme-list-desc">Hello 5G</span>
-                 </a>
-                </div>
-                <div class="flyme-list">
-                    <a href="javascript:;">
-                        <div class="flyme-list-img"><img src="https://fms.res.meizu.com/dms/2020/05/27/9195db7f-9958-4ae0-90ea-740e8d024989.png" alt=""></div>
-                    <span class="flyme-list-desc">全面提升续航能力</span>
+                        <div class="flyme-list-img"><img
+                                src="https://fms.res.meizu.com/dms/2019/10/25/9f881cfe-a9e7-465c-a88d-5fca2ba02d8d.jpg"
+                                alt=""></div>
+                        <span class="flyme-list-desc">Hello 5G</span>
                     </a>
                 </div>
                 <div class="flyme-list">
                     <a href="javascript:;">
-                        <div class="flyme-list-img"><img src="https://fms.res.meizu.com/dms/2019/10/25/369f2068-b5d4-40cc-a706-eaf40026ec7c.jpg" alt=""></div>
-                    <span class="flyme-list-desc">图库新功能</span>
+                        <div class="flyme-list-img"><img
+                                src="https://fms.res.meizu.com/dms/2020/05/27/9195db7f-9958-4ae0-90ea-740e8d024989.png"
+                                alt=""></div>
+                        <span class="flyme-list-desc">全面提升续航能力</span>
                     </a>
                 </div>
                 <div class="flyme-list">
                     <a href="javascript:;">
-                        <div class="flyme-list-img"><img src="https://fms.res.meizu.com/dms/2019/10/25/59b8ff86-88ae-4d5d-96fa-f6a04badbc5b.jpg" alt=""></div>
-                    <span class="flyme-list-desc">文档校正模式</span>
+                        <div class="flyme-list-img"><img
+                                src="https://fms.res.meizu.com/dms/2019/10/25/369f2068-b5d4-40cc-a706-eaf40026ec7c.jpg"
+                                alt=""></div>
+                        <span class="flyme-list-desc">图库新功能</span>
                     </a>
                 </div>
                 <div class="flyme-list">
                     <a href="javascript:;">
-                        <div class="flyme-list-img"><img src="https://fms.res.meizu.com/dms/2020/05/29/9b7b5115-0377-4847-a5d3-af72ffed96e3.jpg"" alt=""></div>
-                    <span class="flyme-list-desc">产品建议解答</span>
+                        <div class="flyme-list-img"><img
+                                src="https://fms.res.meizu.com/dms/2019/10/25/59b8ff86-88ae-4d5d-96fa-f6a04badbc5b.jpg"
+                                alt=""></div>
+                        <span class="flyme-list-desc">文档校正模式</span>
+                    </a>
+                </div>
+                <div class="flyme-list">
+                    <a href="javascript:;">
+                        <div class="flyme-list-img"><img
+                                src="https://fms.res.meizu.com/dms/2020/05/29/9b7b5115-0377-4847-a5d3-af72ffed96e3.jpg"" alt=""></div>
+                    <span class=" flyme-list-desc">产品建议解答</span>
                     </a>
                 </div>
             </div>
@@ -133,232 +149,8 @@
     <!-- footer -->
     <div id="footer-meizu" style="width: 100%;"></div>
     <script src="./js/tools.js"></script>
+    <script src="./js/hover.js"></script>
     <script src="./js/index.js"></script>
-    <script>
-        $("#header-meizu").load("./header.html")
-$("#footer-meizu").load("./footer.html")
-let $phoneContent = $(".phone")
-let $acousticContent = $(".acoustic")
-let $accessoriesContent = $(".accessories")
-let $community = $("#community")
-let $video = $("#video")
-// $("img.lazy").lazyload({
-//     effect: "fadeIn" //图片显示方式
-// });
-
-//轮播图逻辑
-$(function () {
-    let showbox = $("#banner-show")
-    let imgbox = $("#bannerbox")
-    let btns = $("#bannerbtns li")
-    let banner = new Banner({
-        showBox: showbox,
-        imgBox: imgbox,
-        btns: btns,
-        time: 2000
-    })
-    banner.init();
-})
-// $.get(
-//     "http://10.31.162.86/dest/php/getIndexPhone.php",
-//     function (data) {
-//         data = JSON.parse(data)
-//         let str = ''
-//         // console.log(data)
-//         $.each(data, function (index, item) {
-//             // console.log(item)
-//             // console.log(item.goodsName)
-//             console.log(index)
-//             if (index <= 1) {
-//                 str += ` <div class="phone-header">
-//                                 <a href="#" class="box-a">
-//                                 <span class="goods-name-top">${item.goodsName}</span>
-//                                 <p class="goods-desc-top">${item.goodsDesc}</p>
-//                                 <span class="goods-price-top"><i>￥</i>${item.goodsPrice}</span>
-//                                 <div class="goods-img-box-top">
-//                                     <img class="lazy" data-original=${item.goodsImg}
-//                                         alt="">
-//                                 </div>
-//                             </a>
-//                         </div>`
-//             }
-//             else{
-//                 str += `<div class="phone-goods"> 
-//                 <a href="#" class="box-a">
-//                     <div class="goods-img-box">
-//                         <img class="lazy" data-original=${item.goodsImg} alt="">
-//                     </div>
-//                     <span class="goods-name">${item.goodsName}</span>
-//                     <p class="goods-desc">${item.goodsDesc}</p>
-//                     <span class="goods-price"><i>￥</i>${item.goodsPrice}</span>
-//                 </a>
-//             </div>`
-//             }
-//         })
-//         $phoneContent.html(str);
-//         $("img.lazy").lazyload({
-//             effect: "fadeIn" //图片显示方式
-//         });
-//     }
-// )
-//获取手机 声学 配件 板块 逻辑
-function phone (){
-    $.ajax({
-        type:"GET",
-        url: "http://10.31.162.86/dest/php/getIndexPhone.php",
-        async: false,
-        success: function (data) {
-            data = JSON.parse(data)
-            let phonestr = ""
-            let acousticstr ="" 
-            let accessoriesstr = ""
-            let phonearr = []
-            let acousticarr = []
-            let accessoriesarr = []
-            // console.log(data)
-    
-            $.each(data, function (index, item) {
-                if (item.goodsType == "001") {
-                    phonearr.push(item)
-                }
-                if (item.goodsType == "002") {
-                    acousticarr.push(item)
-                }
-                if (item.goodsType == "003") {
-                    accessoriesarr.push(item)
-                }
-                // console.log(item)
-                // console.log(item.goodsName)
-                // console.log(index)
-            })
-            $.each(phonearr, function (index, item) {
-                if (index <= 1) {
-                    phonestr += ` <div class="phone-header">
-                                    <a href="#" class="box-a">
-                                    <span class="goods-name-top">${item.goodsName}</span>
-                                    <p class="goods-desc-top">${item.goodsDesc}</p>
-                                    <span class="goods-price-top"><i>￥</i>${item.goodsPrice}</span>
-                                    <div class="goods-img-box-top">
-                                        <img class="lazy" data-original=${item.goodsImg}
-                                            alt="">
-                                    </div>
-                                </a>
-                            </div>`
-                } else {
-                    phonestr += `<div class="phone-goods"> 
-                    <a href="#" class="box-a">
-                        <div class="goods-img-box">
-                            <img class="lazy" data-original=${item.goodsImg} alt="">
-                        </div>
-                        <span class="goods-name">${item.goodsName}</span>
-                        <p class="goods-desc">${item.goodsDesc}</p>
-                        <span class="goods-price"><i>￥</i>${item.goodsPrice}</span>
-                    </a>
-                </div>`
-                }
-                if (index >= 5) {
-                    return false
-                }
-            })
-            $.each(acousticarr, function (index, item) {
-                if (index <= 12) {
-                    acousticstr += `<div class="phone-goods"> 
-                    <a href="#" class="box-a">
-                        <div class="goods-img-box">
-                            <img class="lazy" data-original=${item.goodsImg} alt="">
-                        </div>
-                        <span class="goods-name">${item.goodsName}</span>
-                        <p class="goods-desc">${item.goodsDesc}</p>
-                        <span class="goods-price"><i>￥</i>${item.goodsPrice}</span>
-                    </a>
-                </div>`
-                } else {
-                    return false
-                }
-            })
-            $.each(accessoriesarr, function (index, item) {
-                if (index <= 12) {
-                    accessoriesstr += `<div class="phone-goods"> 
-                    <a href="#" class="box-a">
-                        <div class="goods-img-box">
-                            <img class="lazy" data-original=${item.goodsImg} alt="">
-                        </div>
-                        <span class="goods-name">${item.goodsName}</span>
-                        <p class="goods-desc">${item.goodsDesc}</p>
-                        <span class="goods-price"><i>￥</i>${item.goodsPrice}</span>
-                    </a>
-                </div>`
-                } else {
-                    return false
-                }
-            })
-            $phoneContent.html(phonestr)
-            $acousticContent.html(acousticstr)
-            $accessoriesContent.html(accessoriesstr)
-            $("img.lazy").lazyload({
-                effect: "fadeIn" //图片显示方式
-            });
-            // console.log(phonearr)
-            // console.log(acousticarr)
-            // console.log(accessoriesarr)
-        }
-    })
-}
-//获取社区 视频 板块 逻辑 
-function video(){
-    $.ajax({
-        type:"GET",
-        url: "http://10.31.162.86/dest/php/getIndexCommunity.php",
-        success:function (res) {
-            res = JSON.parse(res)
-            let videostr = ""
-            let communitystr = ""
-            // console.log(res[0].data)
-            // console.log(res[1].str)
-            $.each(res[0].data, function (index, item) {
-                videostr += `
-                <div class="video-list">
-                <a href=${item.link}>
-                  <div class="video-list-img">
-                      <img src=${item.img}
-                          alt="">
-                      <span class="playbtn"></span>
-                  </div>
-                  <p class="video-list-desc">${item.describe}</p>
-                </a>
-              </div>
-                `
-            })
-            $video.html(videostr)
-            $.each(res[1].str, function (index, item) {
-                communitystr += `
-                <div class="community-list">
-                        <a href="javascript:;">
-                            <div class="community-list-img"><img
-                                    src=${item.bigimg}
-                                    alt=""></div>
-                            <div class="usermsg">
-                                <span><img
-                                        src=${item.userimg}
-                                        alt=""></span><em>${item.username}</em>
-                            </div>
-                            <p class="userdesc">${item.usertext}</p>
-                            <span class="userphone">${item.userphone}</span>
-                        </a>
-                    </div>
-                `
-            })
-            $community.html(communitystr)
-        }
-    })
-}
-async function render (){
-
-    await phone()
-    await video()
-}
-render()
-    </script>
 </body>
 
 </html>

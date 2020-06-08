@@ -1,4 +1,4 @@
-$(function () {
+function hover () {
     let headershow =$("#header-show")
     let showcontent = $("#show-content")
     let items = $(".item")
@@ -39,4 +39,4 @@ $(function () {
         gouwuche.removeClass('icon-gouwuchekong-color')
         oas.removeClass('showdowncolor')
     })
-})
+}

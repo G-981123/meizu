@@ -52,12 +52,11 @@
     -webkit-box-orient: vertical;
 }
 %video-list-desc {
-    @include texthide();
     color: #515151;
     font-size: 16px;
+    width: 303px;
     text-align: center;
-    line-height: normal;
-    padding: 17px 0;
+    margin: 17px 0;
 }
 %community-list-img {
     width: 303px;
@@ -78,6 +77,7 @@
 }
 
 #louti-box {
+    display: none;
     li {
         display: inline-block;
         width: 50px;
@@ -334,7 +334,8 @@
     }
 }
 .flyme-list-desc {
-    @extend %video-list-desc
+    @extend %video-list-desc;
+    @include texthide();
 }
 .video-list{
     margin-bottom: 15px;
@@ -360,5 +361,11 @@
     background-size: cover;
 }
 .video-list-desc {
-   @extend %video-list-desc
+    height: 20px;
+    line-height: 20px;
+   @extend %video-list-desc;
+   @include texthide();
+}
+.loutiActive{
+    background-color: rebeccapurple !important;
 }

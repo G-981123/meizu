@@ -1,3 +1,6 @@
+@import "../scss/header.scss";
+@import "../scss/footer.scss";
+
 #row {
     width: 1240px;
     margin: 0 auto;
@@ -7,28 +10,34 @@
     position: relative;
     width: 100%;
     height: 70px;
-    background-color: #f1f1f1;
+    background-color: #fff;
     border-top: 1px solid #dedede;
+}
+
+#fastnav-abox {
+    position: relative;
+    // position: fixed;
+    width: 100%;
     border-bottom: 1px solid #dedede;
+    background-color: rgba(230, 216, 216, 0.4);
 }
 
 #fastnav-box {
-    position: relative;
-    // position: fixed;
     width: 1240px;
     height: 70px;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
+
     span {
         display: block;
         position: absolute;
         top: 15px;
         left: 0;
         font-size: 26px;
-        columns: #000000;
     }
 
     ul {
