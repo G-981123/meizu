@@ -91,9 +91,73 @@
         }
     }
 }
-
-#buttom-img-box {
+#gocart {
+    position: fixed;
+    z-index: 999;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    background-color: palegoldenrod;
+    border-radius: 20px;
+    span {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+        height: 50px;
+        color: skyblue;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    a {
+        font-size: 14px;
+        color: slategray;
+        display: block;
+        text-align: center;
+        &:hover {
+            color: snow;
+        }
+    }
+}
+#imgbtnleft{
+    opacity: 0;
+    position: absolute;
+    width: 24px;height: 90px;
+    text-align: center;
+    line-height: 90px;
+    font-size: 16px;
+    left: 0;
+    z-index: 999;
+}
+#imgbtnright{
+    opacity: 0;
+    font-size: 16px;
+    position: absolute;
+    right: 0;
+    z-index: 999;
+    width: 24px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+}
+#showbox {
+    position: relative;
     width: 536px;
+    height: 90px;
+    overflow: hidden;
+    // background-color: pink;
+}
+#buttom-img-box {
+    position: absolute;
+    z-index: 900;
+    width: 796px;
+    height: 80px;
     padding: 10px 0 0 24px;
 
     li {

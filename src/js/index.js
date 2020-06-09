@@ -4,6 +4,7 @@
 $(function(){
     $("#header-meizu").load("./header.html",function(){
        hover()
+       cartclick()
     })
     $("#footer-meizu").load("./footer.html")
     let showbox = $("#banner-show")
@@ -18,6 +19,9 @@ $(function(){
     })
     banner.init();
     phone();
+    $("#cart").on("click",function(){
+        console.log(1)
+    })
     // let louti =new louti({
     //     $louceng:$(".phone-box"),
     //     $louti:$("#louti-box li"),

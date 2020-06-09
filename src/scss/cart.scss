@@ -1,5 +1,5 @@
 @charset 'utf-8';
-
+@import "../scss/footer.scss";
 #header-show,
 #cart-box {
     width: 1240px;
@@ -125,6 +125,7 @@
     }
 }
 #is-goods {
+    display: none;
     width: 1240px;
     margin: 20px auto 0;
     color: #fff;
@@ -192,6 +193,10 @@
     border-spacing: 0;
 }  
 .goods-body-list {
+    display: none;
+    // display:flex;
+    align-items: center;
+    justify-content: space-between;
     width: 1240px;
     height: 150px;
     background-color: #fff;

@@ -1,5 +1,5 @@
-function hover () {
-    let headershow =$("#header-show")
+function hover() {
+    let headershow = $("#header-show")
     let showcontent = $("#show-content")
     let items = $(".item")
     let olis = $("#nav>li")
@@ -38,5 +38,11 @@ function hover () {
         yonghu.removeClass('icon-yonghu-color')
         gouwuche.removeClass('icon-gouwuchekong-color')
         oas.removeClass('showdowncolor')
+    })
+}
+function cartclick (){
+    let $cart =$("#cart")
+    $cart.on("click",function(){
+        window.open("./cart.html")
     })
 }
