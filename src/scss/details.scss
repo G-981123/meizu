@@ -5,7 +5,6 @@
     width: 1240px;
     margin: 0 auto;
 }
-
 #fastnav {
     position: relative;
     width: 100%;
@@ -17,6 +16,7 @@
 #fastnav-abox {
     position: relative;
     // position: fixed;
+    z-index: 999;
     width: 100%;
     border-bottom: 1px solid #dedede;
     background-color: rgba(230, 216, 216, 0.4);
@@ -79,9 +79,10 @@
 }
 
 #bigimg {
+    position: relative;
     width: 560px;
     height: 560px;
-
+    pointer-events:auto;
     a {
         display: block;
 
@@ -90,6 +91,23 @@
             height: 100%;
         }
     }
+}
+#listbox {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: none;
+    background-color: rgba(220,220,220,0.3);
+    top: 0;
+    left: 0;
+    pointer-events:none;
+}
+#rightimgbox {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 560px;
+    top: 0;
 }
 #gocart {
     position: fixed;
@@ -365,6 +383,7 @@ hr {
 }
 
 #property-num {
+    display: none;
     dl {
         dt {
             float: left;
@@ -407,6 +426,7 @@ hr {
 }
 
 #property-buy {
+    display: none;
     margin: 17px 0 0 10px;
 
     a {

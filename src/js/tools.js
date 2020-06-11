@@ -97,7 +97,7 @@ function addCookie(key, value, count) {
 
 function getCookie(key) {
 
-    let str = unescape(document.cookie); //获取当前网站所有的cookie（键值对）：ausername=肖阳aaa; username=肖阳; userpass=123
+    let str = unescape(document.cookie); //获取当前网站所有的cookie（键值对）
 
     // 1、用字符串的split函数，分割cookie字符串，分割成了数组
     let arr = str.split("; ");
@@ -119,6 +119,62 @@ function removeCookie(key) {
 function updateCookie(key, value, count) {
     addCookie(key, value, count);
 }
+class Louti {
+    constructor(obj) {
+        this.$louceng = obj.$louceng,
+        this.$louti = obj.$louti,
+        this.$loutibox = obj.$loutibox,
+        this.$last = obj.$last
+    }
+    init() {
+        console.log(this.$louceng)
+        console.log(this.$louti)
+        console.log(this.$loutibox)
+        console.log(this.$last)
+        let _this = this
+        _this.scroll(_this.$loutibox,_this.$louceng,_this.$louti)
+        this.$louti.not(this.$last).on("click",function() {
+            $(window).off('scroll');
+            _this.$louti.removeClass('loutiactive')
+            $(_this).addClass('loutiactive')
+            let $loucengtop = _this.$louceng.eq($(_this).index()).offset().top
+            $('html,body').animate({
+                scrollTop: $loucengtop
+            },()=> {
+                $(window).on('scroll',()=> {
+                    _this.scroll(_this.$loutibox,_this.$louceng,_this.$louti)
+                })
+            })
+        })
+        this.$last.on("click", function () {
+            $(window).off('scroll');
+            $('html,body').animate({
+                scrollTop: 0
+            },() =>{
+                _this.scroll(_this.$loutibox,_this.$louceng,_this.$louti)
+            })
+        })
 
-
-
+    }
+    scroll($loutibox,$louceng,$louti) {
+        $(window).scroll(function () {
+            console.log($(window).scrollTop())
+            let $top = parseFloat($(window).scrollTop())
+            // console.log($top)
+            $top >= 800 ? $loutibox.show(500) : $loutibox.hide(500)
+            $.each($louceng, function (index, item) {
+                let $loucengtop = parseFloat($(item).offset().top) + parseFloat($(item)
+                    .height() / 2)
+                // console.log(index)
+                // console.log($(item))
+                // console.log($top)
+                // console.log($loucengtop)
+                if ($loucengtop > $top) {
+                    $louti.removeClass("loutiactive")
+                    $louti.eq(index).addClass("loutiactive")
+                    return false
+                }
+            })
+        })
+    }
+}

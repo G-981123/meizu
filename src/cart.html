@@ -55,12 +55,12 @@
                             <td class="cart-col-price">单价(元)</td>
                             <td class="cart-col-num">数量</td>
                             <td class="cart-col-total">小计(元)</td>
-                            <td class="cart-col-ctrl">编辑</td>
+                            <td class="cart-col-ctrl" id="bianji">编辑</td>
                         </tr>
                     </table>
                     <div id="is-goods-main">
                         <ul id="is-goods-body">
-                            <li class="goods-body-list">
+                            <li class="goods-body-list" data-id="001001">
                                 <div class="cart-col-select">
                                     <div class="goods-body-checkbox"><input type="checkbox" class="checkboxs query-one">
                                     </div>
@@ -78,7 +78,7 @@
                                 <div class="cart-col-num">
                                     <div class="col-num-box">
                                         <input type="button" class="num-pre" value="-">
-                                        <input type="text" class="num-text" value="1">
+                                        <input type="text" readonly="readonly" class="num-text" value="1">
                                         <input type="button" class="num-add" value="+">
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                     <p class="cart-product-total">￥<span>4999</span></p>
                                 </div>
                                 <div class="cart-col-ctrl">
-                                    <p class="cart-product-ctrl"><span>--</span></p>
+                                    <p class="cart-product-ctrl"><span class="delone">--</span></p>
                                 </div>
                             </il>
                         </ul>
@@ -97,10 +97,10 @@
                                 <input type="checkbox" class="query-all"><span>全选</span>
                             </div>
                             <span id="del">删除选中的商品</span>
-                            <span id="select">共<span>&nbsp;1&nbsp;</span>件商品,已选择&nbsp;<span>1</span>&nbsp;件</span>
+                            <span id="select">共<span id="goodsnum">&nbsp;1&nbsp;</span>件商品,已选择&nbsp;<span id="querynum">0</span>&nbsp;件</span>
                         </div>
                         <div id="goods-footer-right" class="float_r">
-                            <span>已优惠<em>0.00</em>元,合计(不含运费):<i>￥0.00</i></span>
+                            <span>已优惠<em>0.00</em>元,合计(不含运费):￥<i>0.00</i></span>
                             <div>去结算</div>
                         </div>
                     </div>

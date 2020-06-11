@@ -32,10 +32,18 @@
                     </div>
                     <div id="msgbox"></div>
                     <div id="usernamebox"><input type="text" id="username"
-                          placeholder="用户名以字母开头,数字,字母,下划线组成,6-16位"><span class="right-msg"></span></div>
+                          placeholder="字母开头,数字,字母,下划线组成,6-16位用户名" maxlength="16"><span class="right-msg"></span></div>
                     <div id="passwordbox"><input type="password" id="password"
-                            placeholder="密码以数字,字母,下划线组成,最少6位最多16位"><span class="right-msg"></span></div>
-                    <div id="passwordboxr"><input type="password" id="passwordr" placeholder="确认密码"><span
+                            placeholder="数字,字母,下划线,特殊符号组成,6-16位密码" maxlength="16"><span class="right-msg"></span></div>
+                    <div id="passupdown">
+                        密码强度
+                        <ul id="passupdownbox" class="clear_fix">
+                            <li >弱</li>
+                            <li >中</li>
+                            <li >强</li>
+                        </ul>
+                    </div>                            
+                    <div id="passwordboxr"><input type="password" id="passwordr" maxlength="16" placeholder="确认密码"><span
                             class="right-msg"></span></div>
                     <div id="btn-box"><input type="button" id="btn-box" value="注册"></div>
                     <a href="login.html" id="loginBtn">登入</a>

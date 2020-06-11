@@ -81,7 +81,40 @@
     border-radius: 5px;
     color: snow;
 }
-
+#passupdown {
+    display: none;
+    position: absolute;
+    width: 250px;
+    height: 18px;
+    top: 231px;
+    left: 60px;
+    background-color: pink;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: left;
+    ul {
+        display: block;
+        float: right;
+        li {
+            width: 50px;
+            height: 18px;
+            float: left;
+            font-size: 16px;
+            text-align: center;
+            line-height: 18px;
+            background-color: honeydew;
+        }
+    }
+}
+.ruo{
+    background-color: red !important;
+}
+.zhong{
+    background-color: yellow !important;
+}
+.qiang {
+    background-color: green !important;
+}
 #reg-box {
     position: absolute;
     background-color: #fff;

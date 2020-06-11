@@ -1,10 +1,10 @@
 // $("img.lazy").lazyload({
 //     effect: "fadeIn" //图片显示方式
 // });
-$(function(){
-    $("#header-meizu").load("./header.html",function(){
-       hover()
-       cartclick()
+$(function () {
+    $("#header-meizu").load("./header.html", function () {
+        hover()
+        cartclick()
     })
     $("#footer-meizu").load("./footer.html")
     let showbox = $("#banner-show")
@@ -19,15 +19,63 @@ $(function(){
     })
     banner.init();
     phone();
-    $("#cart").on("click",function(){
-        console.log(1)
-    })
-    // let louti =new louti({
-    //     $louceng:$(".phone-box"),
-    //     $louti:$("#louti-box li"),
-    //     $loutibox:$("#louti"),
+    scroll()
+    let $louti = $("#louti-box>li")
+    let $loutibox = $("#louti")
+    let $louceng = $(".phone-content")
+    let $last = $("#last")
+    // let $alouceng = $(".phone-content")
+    // let $alouti = $("#louti-box>li")
+    // let $aloutibox =$("#louti")
+    // let $alast=$("#last")
+    // console.log($alouceng)
+    // let louti =new Louti({
+    //     $louceng:$alouceng,
+    //     $louti:$alouti,
+    //     $loutibox:$aloutibox,
+    //     $last:$alast
     // })
     // louti.init()
+    function scroll() {
+        $(window).scroll(function () {
+            // console.log($(window).scrollTop())
+            let $top = parseFloat($(window).scrollTop())
+            $top >= 800 ? $loutibox.show(500) : $loutibox.hide(500)
+            $.each($louceng, function (index, item) {
+                let $loucengtop = parseFloat($(item).offset().top) + parseFloat($(item).height() / 2)
+                // console.log(index)
+                // console.log($(item))
+                // console.log($top)
+                // console.log($loucengtop)
+                if ($loucengtop > $top) {
+                    $louti.removeClass("loutiactive")
+                    $louti.eq(index).addClass("loutiactive")
+                    return false
+                }
+            })
+        })
+    }
+    $louti.not($last).on("click", function () {
+        $(window).off('scroll');
+        $louti.removeClass('loutiactive')
+        $(this).addClass('loutiactive')
+        let $loucengtop = $louceng.eq($(this).index()).offset().top
+        $('html,body').animate({
+            scrollTop: $loucengtop
+        }, function () {
+            $(window).on('scroll', function () {
+                scroll()
+            })
+        })
+    })
+    $last.on("click", function () {
+        $(window).off('scroll');
+        $('html,body').animate({
+            scrollTop: 0
+        },function(){
+            scroll()
+        })
+    })
 })
 //获取手机 声学 配件 板块 逻辑
 function phone() {
@@ -39,7 +87,7 @@ function phone() {
     $.ajax({
         type: "GET",
         url: "http://10.31.162.86/dest/php/getIndexPhone.php",
-        async:false,
+        async: false,
         success: function (res) {
             res = JSON.parse(res)
             let phonestr = "" //手机html
@@ -181,13 +229,9 @@ function phone() {
             // console.log(phonearr)
             // console.log(acousticarr)
             // console.log(accessoriesarr)
-                $("img.lazy").lazyload({
-                    effect: "fadeIn" //图片显示方式
-                });
+            $("img.lazy").lazyload({
+                effect: "fadeIn" //图片显示方式
+            });
         }
     })
 }
-// $(window).on("scroll",function(){
-
-// })
-// 获取社区 视频 板块 逻辑

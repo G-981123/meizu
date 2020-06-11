@@ -118,6 +118,19 @@ input {
     border-radius: 6px;
     border: 1px solid #999;
 }
+#yzmbox {
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #999;
+    img {
+        display: block;
+        float: left;
+    }
+}
+#yzm {
+    float: left;
+    width: 215px;
+}
 
 #loginBtn {
     display: inline-block;

@@ -12,8 +12,8 @@ $(function () {
     let $rowright = $("#row-right")
     let $title = $("title")
     let $showbox = $("#showbox")
-    let $cartbtn =$("#addCartBtn")
-    let $gocart =$("#gocart")
+    let $cartbtn = $("#addCartBtn")
+    let $gocart = $("#gocart")
     //顶部悬浮
     $(window).scroll(function () {
         let $top = $(window).scrollTop();
@@ -38,6 +38,8 @@ $(function () {
             "Id": Id
         },
         success: function (data) {
+            $("#property-num").css({display:"block"})
+            $("#property-buy").css({display:"block"})
             data = JSON.parse(data)
             // console.log(data)
             let colorarr = data.goodsColor.split(",")
@@ -163,7 +165,7 @@ $(function () {
         </div>
             `
             $navBox.html(nav)
-            $bigimg.html(bigimgstr)
+            $bigimg.prepend(bigimgstr)
             $minimg.html(minimgstr)
             $rowright.prepend(rightbox)
             $title.html(`${data.goodsName}-魅族商城`)
@@ -187,7 +189,7 @@ $(function () {
                     $(this).addClass("active")
                 })
                 //加购物车
-                $cartbtn.on("click",function(){
+                $cartbtn.on("click", function () {
                     // console.log($(".nettype .active").val())
                     // console.log($(".colortype").children().has("active").val())
                     // console.log($(".colortype").find(".active").val())
@@ -197,32 +199,31 @@ $(function () {
                     let omemorytype = $(".memorytype").find(".active").html()
                     let opackagetype = $(".packagetype").find(".active").html()
                     let onum = $("#goodsCount").val()
-                    let username =getCookie("username")
+                    let username = getCookie("username")
                     $.ajax({
-                        type:"GET",
-                        url:"http://10.31.162.86/dest/php/setCart.php",
-                        data:{
-                            "username":username,
-                            "Id":Id,
-                            "onum":onum,
-                            "ocorlortype":ocorlortype,
-                            "onettype":onettype,
-                            "omemorytype":omemorytype,
-                            "opackagetype":opackagetype
+                        type: "GET",
+                        url: "http://10.31.162.86/dest/php/setCart.php",
+                        data: {
+                            "username": username,
+                            "Id": Id,
+                            "onum": onum,
+                            "ocorlortype": ocorlortype,
+                            "onettype": onettype,
+                            "omemorytype": omemorytype,
+                            "opackagetype": opackagetype
 
                         },
-                        success:function(data){
-                            if(data==1){
+                        success: function (data) {
+                            if (data == 1) {
                                 $gocart.css({
-                                    display:"block"
+                                    display: "block"
                                 })
-                                setTimeout(function(){
+                                setTimeout(function () {
                                     $gocart.css({
-                                        display:"none"
+                                        display: "none"
                                     })
-                                },6000)
-                            }
-                            else {
+                                }, 6000)
+                            } else {
                                 alert("添加失败")
                             }
                         }
@@ -295,11 +296,11 @@ $(function () {
     let $numpre = $("#numpre")
     let $goodsCount = $("#goodsCount")
     let $numadd = $("#numadd")
-    let $goodscount=$goodsCount.val()
+    let $goodscount = $goodsCount.val()
     let count
     $numpre.on("click", function () {
         if ($goodsCount.val() >= 2) {
-            count =--$goodscount;
+            count = --$goodscount;
             $goodsCount.val(function () {
                 return count
             });
@@ -309,7 +310,7 @@ $(function () {
     })
     $numadd.on("click", function () {
         if ($goodsCount.val() <= 9) {
-            count =++$goodscount;
+            count = ++$goodscount;
             $goodsCount.val(function () {
                 return count;
             })
@@ -317,13 +318,59 @@ $(function () {
             return false;
         }
     })
-    let res =/^[0-9]$|^[10]$/
+    let res = /^[0-9]$|^[10]$/
     $goodsCount.change(function () {
-        if (res.test($goodsCount.val())==false) {
+        if (res.test($goodsCount.val()) == false) {
             $goodsCount.val(function () {
                 return count;
             })
         }
     })
+    //放大镜
+    const $listbox = $("#listbox")
+    const $rightimgbox = $("#rightimgbox")
+    $bigimg.on("mousemove", "#bigrdimg", function (e) {
+        let imgsrc = $(this).attr("src")
+        // console.log(imgsrc)
+        let left1 = e.pageX - $bigimg.offset().left - $listbox.width() / 2
+        let top1 = e.pageY - $bigimg.offset().top - $listbox.height() / 2
+        // console.log(left1, top1)
+        if (left1 < 0) {
+            left1 = 0
+        } else if (left1 + $listbox.width() > 560) {
+            left1 = 560 - $listbox.width()
+        }
+        if (top1 < 0) {
+            top1 = 0
+        } else if (top1 + $listbox.height() > 560) {
+            top1 = 560 - $listbox.height()
+        }
+        $listbox.css({
+            display:'block',
+            left: left1,
+            top: top1
+        })
+        $rightimgbox.css({
+            backgroundImage: `url(${imgsrc})`,
+            backgroundSize: "1120px 1120px",
+            backgroundPosition : `-${left1*2}px -${top1*2}px`
+        })
+        
+        $bigimg.on("mouseenter",function () {
+            $listbox.css({
+                display:'block'
+            })
+            $rightimgbox.css({
+                display:'block'
+            })
+        })
+        $bigimg.on("mouseleave",function () {
+            $listbox.css({
+                display:'none'
+            })
+            $rightimgbox.css({
+                display:'none'
+            })
+        })
+    })
 })
-//放大镜
