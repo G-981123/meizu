@@ -45,4 +45,8 @@ function cartclick (){
     $cart.on("click",function(){
         window.open("./cart.html")
     })
+    let $user =$("#user")
+    $user.on("click",function(){
+        window.open("./login.html")
+    })
 }

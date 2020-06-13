@@ -33,7 +33,7 @@ $(function () {
     })
     $.ajax({
         type: "GET",
-        url: "http://10.31.162.86/dest/php/getdetails.php",
+        url: "http://10.31.162.86/php/getdetails.php",
         data: {
             "Id": Id
         },
@@ -202,7 +202,7 @@ $(function () {
                     let username = getCookie("username")
                     $.ajax({
                         type: "GET",
-                        url: "http://10.31.162.86/dest/php/setCart.php",
+                        url: "http://10.31.162.86/php/setCart.php",
                         data: {
                             "username": username,
                             "Id": Id,

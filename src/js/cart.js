@@ -7,7 +7,7 @@ $(function () {
     }
     $.ajax({
         type: "GET",
-        url: "http://10.31.162.86/dest/php/getCart.php",
+        url: "http://10.31.162.86/php/getCart.php",
         data: {
             "name": name
         },
@@ -119,7 +119,7 @@ $(function () {
                         let bbbarr = $(this).parent().parent().parent().find(".link-bottom").html().split(" ")
                         $.ajax({
                             type: "GET",
-                            url: "http://10.31.162.86/dest/php/updatecartCount.php",
+                            url: "http://10.31.162.86/php/updatecartCount.php",
                             data: {
                                 "Id": $(this).parent().parent().parent().attr("data-id"),
                                 "ocorlortype": bbbarr[1],
@@ -159,7 +159,7 @@ $(function () {
                     let bbbarr = $(this).parent().parent().parent().find(".link-bottom").html().split(" ")
                     $.ajax({
                         type: "GET",
-                        url: "http://10.31.162.86/dest/php/updatecartCount.php",
+                        url: "http://10.31.162.86/php/updatecartCount.php",
                         data: {
                             "Id": $(this).parent().parent().parent().attr("data-id"),
                             "ocorlortype": bbbarr[1],
@@ -213,7 +213,7 @@ $(function () {
                 console.log($(this).parent().parent().parent().attr("data-id"))
                 $.ajax({
                     type: "GET",
-                    url: "http://10.31.162.86/dest/php/detachcart.php",
+                    url: "http://10.31.162.86/php/detachcart.php",
                     data: {
                         "username":name,
                         "Id":$(this).parent().parent().parent().attr("data-id"),
@@ -252,7 +252,7 @@ $(function () {
                 let cmparr= $(this).parent().parent().parent().find(".link-bottom").html().split(" ")
                 $.ajax({
                     type: "GET",
-                    url: "http://10.31.162.86/dest/php/detachcart.php",
+                    url: "http://10.31.162.86/php/detachcart.php",
                     data: {
                         "username":name,
                         "Id":$(this).parent().parent().parent().attr("data-id"),
@@ -262,7 +262,7 @@ $(function () {
                     },
                     success:data=>{
                      if(data==1){
-                        if($(this).length==index){
+                        if($(this).length==index+1){
                             alert("删除成功")
                         }
                         $(this).parent().parent().parent().remove()
@@ -270,11 +270,11 @@ $(function () {
                         let numarr = $("#goodsnum").html().match(res)
                         let allnum = numarr[0]-1
                         $("#goodsnum").html(`&nbsp;${allnum}&nbsp;`)
+                        $("#goods-footer-right").find("i").html("0.00")
                         if(allnum==0){
                             $("#is-goods").css({display:"none"})
                             $("#no-goods").css({display:"flex"})
                         }
-                        
                      }
                      else {
                         alert("失败")

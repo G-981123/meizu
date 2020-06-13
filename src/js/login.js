@@ -32,7 +32,7 @@ $(function () {
         if ($username.val() != '' && $password.val() != '' && $yzm.val() != "") {
             $.ajax({
                 type: "GET",
-                url: "http://10.31.162.86/dest/php/yzm.php",
+                url: "http://10.31.162.86/php/yzm.php",
                 data: {
                     "code": $yzm.val()
                 },
@@ -40,7 +40,7 @@ $(function () {
                     if (data == 0) {
                         alert("验证码错误")
                     } else if (data == 1) {
-                        $.post("http://10.31.162.86/dest/php/login.php", {
+                        $.post("http://10.31.162.86/php/login.php", {
                                 "username": $username.val(),
                                 "userpass": $password.val()
                             },

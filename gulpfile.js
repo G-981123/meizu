@@ -8,7 +8,7 @@
 //     .pipe(html({
 //         collapseWhitespace:true
 //     }))
-//     .pipe(gulp.dest("d:\\phpstudy\\WWW\\dest"))
+//     .pipe(gulp.dest("d:\\phpstudy\\WWW\\dist"))
 // })
 // //编译sass到指定目录
 // gulp.task("scss",async()=>{
@@ -22,7 +22,7 @@
 //     .pipe(babel({
 //         presets:['@babel/env']
 //     }))
-//     .pipe(gulp.dest("d:\\phpstudy\\WWW\\dest\\js"))
+//     .pipe(gulp.dest("d:\\phpstudy\\WWW\\dist\\js"))
 // })
 
 // gulp.task("watch-all", async () => {
@@ -30,7 +30,7 @@
 //     gulp.watch("./src/**/*", async () => {
 //         //复制文件
 //         gulp.src("./src/**/*")
-//             .pipe(gulp.dest("d:\\phpstudy\\WWW\\dest"));
+//             .pipe(gulp.dest("d:\\phpstudy\\WWW\\dist"));
 //     })
 // })
 const gulp = require('gulp'); //引入gulp，生成一个gulp对象
@@ -64,14 +64,14 @@ const watch = require('gulp-watch'); //gulp监听
 //2.复制文件
 // gulp.task('copyfile', () => {
 //     return gulp.src('src/**/*')
-//         .pipe(gulp.dest('d:\\phpstudy\\WWW\\dest'));
+//         .pipe(gulp.dest('d:\\phpstudy\\WWW\\dist'));
 // });
 
 //3.压缩html文件 - 引入插件包
 gulp.task('uglifyhtml', () => {
     return gulp.src('src/*.html')
         .pipe(html()) //执行html插件包
-        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dest'));
+        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dist'));
 });
 
 //4.压缩css文件 - 引入插件包
@@ -89,7 +89,7 @@ gulp.task('compilesass', () => {
             outputStyle: 'compressed' //压缩
         }))
         .pipe(plugins.sourcemaps.write('.')) //通过sourcemaps,生成.map文件
-        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dest\\css'));
+        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dist\\css'));
 });
 
 
@@ -100,14 +100,14 @@ gulp.task('uglifyjs', () => {
             presets: ['es2015'] //es2015->es6  es2016->es7...
         }))
         .pipe(script()) //执行js压缩
-        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dest\\js'));
+        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dist\\js'));
 });
 
 //7.图片压缩 - jpg/gif/bmp/webp/ [png] - imagemin
 gulp.task('uglifyimg', () => {
     return gulp.src('src/images/*.{jpg,png,gif}')
         .pipe(imagemin())
-        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dest\\images'))
+        .pipe(gulp.dest('d:\\phpstudy\\WWW\\dist\\images'))
 });
 
 //8.监听
@@ -122,7 +122,7 @@ gulp.task('uglifyimg', () => {
 // });
 
 
-//html js scss
+// html js scss
 gulp.task('default', () => {
     watch(['src/thirdplugins/*.js', 'src/*.html', 'src/sass/*.scss', 'src/script/*.js'], gulp.parallel( 'uglifyhtml', 'compilesass', 'uglifyjs'));
 });

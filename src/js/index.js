@@ -86,7 +86,7 @@ function phone() {
     let $video = $(".video")
     $.ajax({
         type: "GET",
-        url: "http://10.31.162.86/dest/php/getIndexPhone.php",
+        url: "http://10.31.162.86/php/getIndexPhone.php",
         async: false,
         success: function (res) {
             res = JSON.parse(res)

@@ -14,7 +14,7 @@ $(function () {
     const $listbox = $('#phone-content');
     $.ajax({
         type:"GET",
-        url:"http://10.31.162.86/dest/php/list.php",
+        url:"http://10.31.162.86/php/list.php",
         success:function(data){
             let str=``
             data= JSON.parse(data)
@@ -60,7 +60,7 @@ $(function () {
             console.log(api.getCurrent());//获取的页码给后端
             $.ajax({
                 type:"GET",
-                url:"http://10.31.162.86/dest/php/list.php",
+                url:"http://10.31.162.86/php/list.php",
                 data:{
                     page: api.getCurrent()
                 },
@@ -163,6 +163,6 @@ $(function () {
     })
     $listbox.on("click",".box-a",function(){
         let Id =$(this).parent().attr("data-goodsid")
-        window.open("http://10.31.162.86/dest/details.html?Id="+Id)
+        window.open("http://10.31.162.86/dist/details.html?Id="+Id)
     })
 })

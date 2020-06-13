@@ -67,7 +67,7 @@ ispass.contrast()
 function isUser() {
     if ($username.val() != '') {
         $.get(
-            "http://10.31.162.86/dest/php/registeruser.php", {
+            "http://10.31.162.86/php/registeruser.php", {
                 "username": $username.val()
             },
             function (data) {
@@ -184,7 +184,7 @@ $btn.on("click", function () {
     })
     //  console.log(parseInt(yzarr[0])+parseInt(yzarr[1])+parseInt(yzarr[2]))
     if (parseInt(yzarr[0]) + parseInt(yzarr[1]) + parseInt(yzarr[2]) == 3 && user == true) {
-        $.post("http://10.31.162.86/dest/php/register.php", {
+        $.post("http://10.31.162.86/php/register.php", {
                 "username": $username.val(),
                 "userpass": $password.val()
             },
